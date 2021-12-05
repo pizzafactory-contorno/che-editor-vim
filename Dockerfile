@@ -1,7 +1,9 @@
+ARG BASE_IMAGE
 FROM pizzafactory/che-editor-ttyd:alpine-3.10 as ttyd
 
 ADD entrypoint.sh /usr/bin/
-FROM pizzafactory0contorno/piatto:alpine-3.10
+
+FROM ${BASE_IMAGE}
 
 USER root
 RUN apk add --no-cache vim bash git
